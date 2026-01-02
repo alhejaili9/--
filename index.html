@@ -84,7 +84,6 @@
         
         textarea { grid-column: span 4; height: 100px; }
 
-        /* تنسيق أزرار الفرز */
         .sort-tools {
             grid-column: span 4;
             display: flex;
@@ -101,9 +100,7 @@
             cursor: pointer;
             font-family: 'Traditional Arabic', serif;
             font-size: 16px;
-            transition: 0.3s;
         }
-        .btn-sort:hover { background-color: #cbd5e1; }
 
         .btn-generate {
             background-color: #27ae60;
@@ -211,9 +208,9 @@
             <div class="form-group">
                 <label>الصف:</label>
                 <select id="defGrade">
-                    <option value="الصف الأول المتوسط">الصف الأول المتوسط</option>
-                    <option value="الصف الثاني المتوسط">الصف الثاني المتوسط</option>
-                    <option value="الصف الثالث المتوسط">الصف الثالث المتوسط</option>
+                    <option value="الأول المتوسط">الأول المتوسط</option>
+                    <option value="الثاني المتوسط">الثاني المتوسط</option>
+                    <option value="الثالث المتوسط">الثالث المتوسط</option>
                 </select>
             </div>
             <div class="form-group">
@@ -261,7 +258,6 @@
             return num.toString().replace(/[0-9]/g, w => id[+w]);
         }
 
-        // توليد قائمة اللجان من 1 إلى 25
         const cSel = document.getElementById('defComm');
         for(let i=1; i<=25; i++) {
             let o = document.createElement('option');
@@ -269,7 +265,6 @@
             cSel.appendChild(o);
         }
 
-        // دالة الفرز الأبجدي للأسماء اليدوية
         function sortNames(order) {
             const textarea = document.getElementById('manualNames');
             if (textarea.disabled) return;
@@ -298,8 +293,8 @@
                         });
                     }
                 });
-                alert("تم استيراد بيانات الطلاب من الإكسل بنجاح.");
-                document.getElementById('manualNames').value = "تم استيراد البيانات من الإكسل بنجاح (سيتم تجاهل الخيارات أدناه).";
+                alert("تم استيراد البيانات بنجاح.");
+                document.getElementById('manualNames').value = "تم استيراد البيانات من الإكسل بنجاح.";
                 document.getElementById('manualNames').disabled = true;
             };
             reader.readAsArrayBuffer(file);
@@ -332,6 +327,9 @@
             }
 
             studentsList.forEach(st => {
+                // إزالة كلمة "الصف" من القيمة إذا وجدت لتجنب التكرار
+                let cleanGrade = st.grade.replace("الصف ", "");
+                
                 area.innerHTML += `
                     <div class="card">
                         <div class="header">
@@ -346,7 +344,7 @@
                         </div>
                         <div class="content">
                             <div class="info-row"><span class="label">اسم الطالب:</span><span class="value">${st.name}</span></div>
-                            <div class="info-row"><span class="label">الصف:</span><span class="value">${st.grade}</span></div>
+                            <div class="info-row"><span class="label">الصف:</span><span class="value">${cleanGrade}</span></div>
                             <div class="info-row"><span class="label">الفصل:</span><span class="value">${toArabicDigits(st.section)}</span></div>
                             <div class="info-row"><span class="label">رقم اللجنة:</span><span class="value">${toArabicDigits(st.committee)}</span></div>
                             <div class="seat-box">
