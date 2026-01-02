@@ -32,26 +32,7 @@
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 20px;
-            font-size: 30px;
-        }
-
-        .upload-section {
-            display: flex;
-            justify-content: space-around;
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px dashed var(--primary-color);
-        }
-
-        .excel-import-box {
-            grid-column: span 3;
-            background: #eef2f3;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1.5px solid #cbd5e1;
-            margin-bottom: 5px;
+            font-size: 32px;
         }
 
         .alert-note {
@@ -64,6 +45,14 @@
             font-weight: bold;
         }
 
+        .excel-import-box {
+            background: #eef2f3;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1.5px solid #cbd5e1;
+            margin-bottom: 15px;
+        }
+
         .grid-inputs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -74,12 +63,8 @@
         .form-group { display: flex; flex-direction: column; }
         label { font-weight: bold; margin-bottom: 5px; font-size: 18px; color: #333; }
         input, select, textarea { 
-            padding: 10px; 
-            border: 1px solid #ccc; 
-            border-radius: 6px; 
-            font-family: 'Traditional Arabic', serif;
-            font-size: 18px;
-            background: white;
+            padding: 10px; border: 1px solid #ccc; border-radius: 6px; 
+            font-family: 'Traditional Arabic', serif; font-size: 18px; background: white;
         }
         
         textarea { grid-column: span 4; height: 100px; }
@@ -93,69 +78,37 @@
         }
 
         .btn-sort {
-            background-color: #e2e8f0;
-            border: 1px solid #cbd5e1;
-            padding: 5px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: 'Traditional Arabic', serif;
-            font-size: 16px;
+            background-color: #e2e8f0; border: 1px solid #cbd5e1; padding: 5px 20px;
+            border-radius: 5px; cursor: pointer; font-family: 'Traditional Arabic', serif;
         }
 
         .btn-generate {
-            background-color: #27ae60;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 24px;
-            width: 100%;
-            font-family: 'Traditional Arabic', serif;
-            margin-top: 20px;
+            background-color: #27ae60; color: white; padding: 15px; border: none;
+            border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 24px;
+            width: 100%; font-family: 'Traditional Arabic', serif; margin-top: 20px;
         }
 
         .developer-credit {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 18px;
-            color: #555;
-            font-weight: bold;
+            text-align: center; margin-top: 15px; font-size: 18px; color: #555; font-weight: bold;
         }
 
-        /* تنسيق البطاقة للطباعة */
         #printArea {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+            display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
         }
 
         .card {
-            width: var(--card-width);
-            height: var(--card-height);
-            border: 1.5px solid #000;
-            background: white;
-            padding: 12px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            page-break-inside: avoid;
-            overflow: hidden;
+            width: var(--card-width); height: var(--card-height); border: 1.5px solid #000;
+            background: white; padding: 12px; box-sizing: border-box; display: flex;
+            flex-direction: column; page-break-inside: avoid; overflow: hidden;
         }
 
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #000;
-            padding-bottom: 5px;
-            height: 75px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #000; padding-bottom: 5px; height: 75px;
         }
 
         .header img { max-height: 60px; max-width: 65px; object-fit: contain; }
-        .header-text { font-size: 11px; font-weight: bold; text-align: center; line-height: 1.3; flex: 1; }
+        .header-text { font-size: 10px; font-weight: bold; text-align: center; line-height: 1.3; flex: 1; margin: 0 5px; }
 
         .content { flex-grow: 1; margin-top: 15px; display: flex; flex-direction: column; }
         .info-row { display: flex; margin-bottom: 12px; font-size: 20px; align-items: baseline; }
@@ -163,14 +116,10 @@
         .value { flex: 1; font-weight: bold; text-align: right; color: #000; }
 
         .seat-box {
-            margin-top: auto; 
-            text-align: center;
-            border-top: 1.5px solid #000;
-            padding-top: 8px;
-            margin-bottom: 5px;
+            margin-top: auto; text-align: center; border-top: 1.5px solid #000; padding-top: 8px; margin-bottom: 5px;
         }
         .seat-label { font-size: 19px; color: red; font-weight: bold; display: block; }
-        .seat-val { font-size: 28px !important; font-weight: bold; color: #000; }
+        .seat-val { font-size: 30px !important; font-weight: bold; color: #000; }
 
         @media print {
             .admin-panel { display: none !important; }
@@ -184,24 +133,13 @@
     <div class="admin-panel">
         <h2 class="section-title">نظام الشاعري لإصدار بطاقات الجلوس</h2>
         
-        <div class="upload-section">
-            <div class="form-group">
-                <label>1. شعار الوزارة:</label>
-                <input type="file" accept="image/*" onchange="previewImg(this, 'p1')">
-            </div>
-            <div class="form-group">
-                <label>2. شعار المدرسة:</label>
-                <input type="file" accept="image/*" onchange="previewImg(this, 'p2')">
-            </div>
-        </div>
-
         <div class="excel-import-box">
             <p style="margin:0 0 10px 0; font-weight:bold;">📥 استيراد من إكسل (A: الاسم | B: رقم الجلوس | C: الصف | D: الفصل | E: اللجنة):</p>
             <input type="file" id="excelFile" accept=".xlsx, .xls" onchange="importFullData(this)">
         </div>
 
         <div class="alert-note">
-            ⚠️ تنبيه: الإعدادات التالية مخصصة لضبط البيانات الافتراضية عند الإدخال اليدوي فقط؛ أما في حال رفع ملف إكسل، فسيتم اعتماد البيانات الواردة في الملف لكل طالب تلقائياً.
+            ⚠️ تنبيه: الإعدادات الافتراضية أدناه تُستخدم للطلاب المضافين يدوياً فقط.
         </div>
 
         <div class="grid-inputs">
@@ -216,12 +154,8 @@
             <div class="form-group">
                 <label>الفصل:</label>
                 <select id="defSection">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option><option value="6">6</option>
                 </select>
             </div>
             <div class="form-group">
@@ -234,7 +168,7 @@
                 <input type="number" id="startNo" value="1001">
             </div>
 
-            <textarea id="manualNames" style="grid-column: span 4; height: 100px;" placeholder="أدخل الأسماء يدوياً هنا..."></textarea>
+            <textarea id="manualNames" style="grid-column: span 4; height: 100px;" placeholder="أو الصق الأسماء هنا يدوياً..."></textarea>
             
             <div class="sort-tools">
                 <button type="button" class="btn-sort" onclick="sortNames('asc')">ترتيب أبجدي (أ - ي) ↑</button>
@@ -249,8 +183,9 @@
     <div id="printArea"></div>
 
     <script>
-        let img1 = "", img2 = "";
-        let studentsList = [];
+        // هذه الأسماء يجب أن تكون مطابقة لأسماء الملفات في GitHub
+        const imgMinistry = "ministry.png"; 
+        const imgSchool = "school.png";    
 
         function toArabicDigits(num) {
             if (!num) return "";
@@ -273,43 +208,34 @@
             textarea.value = names.join('\n');
         }
 
+        let studentsList = [];
+
         function importFullData(input) {
             const file = input.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
                 const data = new Uint8Array(e.target.result);
                 const workbook = XLSX.read(data, {type: 'array'});
-                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-                const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+                const json = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], {header: 1});
                 studentsList = []; 
                 json.forEach((row, index) => {
                     if (row[0] && row[0].toString().trim() !== "") { 
                         studentsList.push({
-                            name: row[0],
-                            seatNo: row[1] || "",
-                            grade: row[2] || "",
-                            section: row[3] || "",
-                            committee: row[4] || ""
+                            name: row[0], seatNo: row[1] || "", grade: row[2] || "",
+                            section: row[3] || "", committee: row[4] || ""
                         });
                     }
                 });
-                alert("تم استيراد البيانات بنجاح.");
+                alert("تم الاستيراد بنجاح.");
                 document.getElementById('manualNames').value = "تم استيراد البيانات من الإكسل بنجاح.";
                 document.getElementById('manualNames').disabled = true;
             };
             reader.readAsArrayBuffer(file);
         }
 
-        function previewImg(input, target) {
-            const reader = new FileReader();
-            reader.onload = e => { if(target === 'p1') img1 = e.target.result; else img2 = e.target.result; }
-            if(input.files[0]) reader.readAsDataURL(input.files[0]);
-        }
-
         function generateCards() {
             const area = document.getElementById('printArea');
             area.innerHTML = ""; 
-            if(!img1 || !img2) { alert("يرجى رفع الشعارات أولاً"); return; }
 
             if (studentsList.length === 0) {
                 const namesArr = document.getElementById('manualNames').value.trim().split('\n');
@@ -317,30 +243,25 @@
                 let sNo = parseInt(document.getElementById('startNo').value);
                 namesArr.forEach(n => {
                     studentsList.push({
-                        name: n.trim(), 
-                        seatNo: sNo++, 
-                        grade: document.getElementById('defGrade').value,
-                        section: document.getElementById('defSection').value, 
-                        committee: document.getElementById('defComm').value
+                        name: n.trim(), seatNo: sNo++, grade: document.getElementById('defGrade').value,
+                        section: document.getElementById('defSection').value, committee: document.getElementById('defComm').value
                     });
                 });
             }
 
             studentsList.forEach(st => {
-                // إزالة كلمة "الصف" من القيمة إذا وجدت لتجنب التكرار
-                let cleanGrade = st.grade.replace("الصف ", "");
-                
+                let cleanGrade = st.grade.toString().replace("الصف ", "");
                 area.innerHTML += `
                     <div class="card">
                         <div class="header">
-                            <img src="${img1}">
+                            <img src="${imgMinistry}" onerror="this.src='https://via.placeholder.com/60?text=Ministry'">
                             <div class="header-text">
                                 المملكة العربية السعودية<br>
                                 الإدارة العامة للتعليم بالمدينة المنورة<br>
                                 مدارس العقيق الأهلية (بنين)<br>
                                 المرحلة المتوسطة
                             </div>
-                            <img src="${img2}">
+                            <img src="${imgSchool}" onerror="this.src='https://via.placeholder.com/60?text=School'">
                         </div>
                         <div class="content">
                             <div class="info-row"><span class="label">اسم الطالب:</span><span class="value">${st.name}</span></div>
@@ -355,7 +276,6 @@
                     </div>
                 `;
             });
-
             setTimeout(() => { window.print(); }, 500);
             studentsList = [];
             document.getElementById('manualNames').disabled = false;
